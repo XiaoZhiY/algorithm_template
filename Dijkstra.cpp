@@ -1,5 +1,5 @@
 /*
-µ¥Ô´×î¶ÌÂ·¾¶°å×Ó 
+å•æºæœ€çŸ­è·¯å¾„æ¿å­ 
 */
 #include <iostream>
 #include <stack>
@@ -14,7 +14,7 @@
 #define N 10000
 using namespace std;
 
-struct edge{	//Õâ¸ö±ßÔÚ¶ÑÖĞÎª³éÏó±ß,´ú±íÄ¿Ç°Ô´µãµ½desµÄ×î¶Ì¾àÀëÎªdist 
+struct edge{	//è¿™ä¸ªè¾¹åœ¨å †ä¸­ä¸ºæŠ½è±¡è¾¹,ä»£è¡¨ç›®å‰æºç‚¹åˆ°desçš„æœ€çŸ­è·ç¦»ä¸ºdist 
 	int des;
 	int dist;
 };
@@ -23,10 +23,10 @@ bool operator>(const edge a,const edge b){
 	return a.dist>b.dist;
 }
 
-int n,s,e;	//±ßÊı£¬Æğµã£¬ÖÕµã 
+int n,s,e;	//è¾¹æ•°ï¼Œèµ·ç‚¹ï¼Œç»ˆç‚¹ 
 priority_queue <edge,vector<edge>,greater<edge> > pq;
 vector <edge> G[N+2];
-int ans[N+2],pre[N+2],vis[N+2];	//¾àÀëÊı×éºÍÂ·¾¶Êı×é 
+int ans[N+2],pre[N+2],vis[N+2];	//è·ç¦»æ•°ç»„å’Œè·¯å¾„æ•°ç»„ 
 
 int main()
 {
@@ -35,22 +35,22 @@ int main()
 		int a,b,d;
 		cin>>a>>b>>d;
 		G[a].push_back(edge{b,d});	
-		G[b].push_back(edge{a,d});  //ÓĞÏòÍ¼È¥µôÕâÒ»ĞĞ 
+		G[b].push_back(edge{a,d});  //æœ‰å‘å›¾å»æ‰è¿™ä¸€è¡Œ 
 	}
-	cin>>s>>e;   //È·¶¨Æğµã¾Í¿ÉËã³öµ½ËùÓĞµãµÄ×î¶ÌÂ·¾¶ 
+	cin>>s>>e;   //ç¡®å®šèµ·ç‚¹å°±å¯ç®—å‡ºåˆ°æ‰€æœ‰ç‚¹çš„æœ€çŸ­è·¯å¾„ 
 	memset(ans,-1,sizeof(ans));
 	memset(pre,-1,sizeof(pre));
 	pq.push(edge{s,0});
 	ans[s]=0;
 	while(!pq.empty()){
 		edge t=pq.top(); pq.pop();
-		if(vis[t.des]) continue;//¼Ó¸övisÊı×é¿ÉÒÔ¼Ó¿ìĞ§ÂÊ 
+		if(vis[t.des]) continue;//åŠ ä¸ªvisæ•°ç»„å¯ä»¥åŠ å¿«æ•ˆç‡ 
 		vis[t.des]=1;
 		for(int i=0;i<G[t.des].size();i++){
 			edge eg=G[t.des][i];
 			if(ans[eg.des]<0||ans[eg.des]>ans[t.des]+eg.dist){
 				ans[eg.des]=ans[t.des]+eg.dist;
-				pre[eg.des]=t.des;	//ĞŞ¸Ä¸Ã½ÚµãµÄÇ°Çı 
+				pre[eg.des]=t.des;	//ä¿®æ”¹è¯¥èŠ‚ç‚¹çš„å‰é©± 
 				pq.push(edge{eg.des,ans[eg.des]});
 			}
 		}

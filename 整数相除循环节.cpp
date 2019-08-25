@@ -11,8 +11,8 @@
 #include <string> 
 #include <string.h>
 using namespace std;
-vector <int> V;	//Ã¿´ÎÉÏµÄÉÌ 
-map <int,int> M; //¼ÇÂ¼Ã¿´Î³öÏÖµÄ±»³ıÊıÒÔ¼°Î»ÖÃ 
+vector <int> V;	//æ¯æ¬¡ä¸Šçš„å•† 
+map <int,int> M; //è®°å½•æ¯æ¬¡å‡ºç°çš„è¢«é™¤æ•°ä»¥åŠä½ç½® 
 
 int main()
 {
@@ -20,7 +20,7 @@ int main()
 	cin>>a>>b>>n;
 	a%=b;
 	while(1){
-		if(cnt==n-1){  //Èç¹ûÒÑ¾­µ½µÚnÎ»ÁË 
+		if(cnt==n-1){  //å¦‚æœå·²ç»åˆ°ç¬¬nä½äº† 
 			for(int i=0;i<3;i++){
 				a*=10;
 				cout<<a/b;
@@ -29,9 +29,9 @@ int main()
 			cout<<endl;
 			return 0;
 		}
-		a*=10;  //µÃµ½±»³ıÊı
+		a*=10;  //å¾—åˆ°è¢«é™¤æ•°
 		map <int,int>::iterator it=M.find(a);	
-		//Èç¹ûÕâ¸ö±»³ıÊı³öÏÖ¹ı¾ÍËµÃ÷¿ªÊ¼Ñ­»·ÁË£¬ÕÒµ½Ñ­»·½ÚÆğµã 
+		//å¦‚æœè¿™ä¸ªè¢«é™¤æ•°å‡ºç°è¿‡å°±è¯´æ˜å¼€å§‹å¾ªç¯äº†ï¼Œæ‰¾åˆ°å¾ªç¯èŠ‚èµ·ç‚¹ 
 		if(it!=M.end()){
 			cur=it->second;
 			break;
@@ -42,11 +42,11 @@ int main()
 		cnt++;
 		
 	}
-	int len=cnt-cur;        //Ñ­»·½ÚµÄ³¤¶È
-	int st=(n-1-cur)%len;   //ÕÒµ½µÚnÎ»ÊıÔÚÑ­»·½ÚÖĞ¶ÔÓ¦µÄÏà¶ÔÆğÊ¼Î»ÖÃ 
-	cout<<V[st+cur];		//¼ÆËã´Ó0¿ªÊ¼µÄ¾ø¶ÔÏÂ±ê 
+	int len=cnt-cur;        //å¾ªç¯èŠ‚çš„é•¿åº¦
+	int st=(n-1-cur)%len;   //æ‰¾åˆ°ç¬¬nä½æ•°åœ¨å¾ªç¯èŠ‚ä¸­å¯¹åº”çš„ç›¸å¯¹èµ·å§‹ä½ç½® 
+	cout<<V[st+cur];		//è®¡ç®—ä»0å¼€å§‹çš„ç»å¯¹ä¸‹æ ‡ 
 	for(int i=0;i<2;i++){
-		st=(st+1)%len;		//ÕÒµ½ºóÁ½Î»Êı 
+		st=(st+1)%len;		//æ‰¾åˆ°åä¸¤ä½æ•° 
 		cout<<V[st+cur];
 	} 
 	cout<<endl;

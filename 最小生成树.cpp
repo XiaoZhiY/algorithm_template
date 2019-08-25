@@ -42,7 +42,7 @@ int main()
 		cin>>e.fr>>e.to>>e.dis;
 		Q.push(e);
 	}
-	int cnt=0,ans=0; //¼ÓÈëÉú³ÉÊ÷±ßµÄÊıÁ¿ 
+	int cnt=0,ans=0; //åŠ å…¥ç”Ÿæˆæ ‘è¾¹çš„æ•°é‡ 
 	while(!Q.empty()){
 		edge t=Q.top();	Q.pop();
 		int r1=find(t.fr),r2=find(t.to);

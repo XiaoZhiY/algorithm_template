@@ -18,7 +18,7 @@ const int maxn =  11000000+5;
 
 char a[maxn];
 char str[2*maxn];
-int rad[2*maxn];  //rad[i]ÎªÒÔiÎªÖĞĞÄµÄ×î³¤»ØÎÄ´®µÄ°ë¾¶±ÈÈç #a#a# µÄ°ë¾¶Îª3 
+int rad[2*maxn];  //rad[i]ä¸ºä»¥iä¸ºä¸­å¿ƒçš„æœ€é•¿å›æ–‡ä¸²çš„åŠå¾„æ¯”å¦‚ #a#a# çš„åŠå¾„ä¸º3 
 int ans=1;
  
 int main()

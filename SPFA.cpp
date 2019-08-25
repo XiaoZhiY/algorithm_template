@@ -1,6 +1,6 @@
 /*
-SPFAÊÊÓÃÓÚ´æÔÚ¸º±ßµÄÓÐÏòÍ¼£¬²¢ÇÒ¿ÉÒÔ¼ì²âÊÇ·ñÓÐ¸º»·¡£ 
-Èç¹ûÊÇÎÞÏòÍ¼±ØÐëÃ»ÓÐ¸º±ß£¬·ñÔò¾ÍÏàµ±ÓÚ¸º»·£¬²»´æÔÚ×î¶ÌÂ·¡£ 
+SPFAé€‚ç”¨äºŽå­˜åœ¨è´Ÿè¾¹çš„æœ‰å‘å›¾ï¼Œå¹¶ä¸”å¯ä»¥æ£€æµ‹æ˜¯å¦æœ‰è´ŸçŽ¯ã€‚ 
+å¦‚æžœæ˜¯æ— å‘å›¾å¿…é¡»æ²¡æœ‰è´Ÿè¾¹ï¼Œå¦åˆ™å°±ç›¸å½“äºŽè´ŸçŽ¯ï¼Œä¸å­˜åœ¨æœ€çŸ­è·¯ã€‚ 
 */
 #include <iostream>
 #include <stack>
@@ -23,15 +23,15 @@ struct edge{
 };
 
 
-int n,s,e;	//±ßÊý£¬Æðµã£¬ÖÕµã 
+int n,s,e;	//è¾¹æ•°ï¼Œèµ·ç‚¹ï¼Œç»ˆç‚¹ 
 vector <edge> G[N+2];
-int d[N+2],  //Æðµãµ½¸÷¸öµãµÄ¾àÀë 
-inq[N+2],	 //Ä³¸öµãÊÇ·ñÔÚ¶ÓÁÐÖÐ 
-cnt[N+2];	 //Ä³¸öµã¾àÀë±»¸üÐÂµÄ´ÎÊý£¬Èç¹ûµ½´ïn¾ÍËµÃ÷ÓÐ¸º»· 
+int d[N+2],  //èµ·ç‚¹åˆ°å„ä¸ªç‚¹çš„è·ç¦» 
+inq[N+2],	 //æŸä¸ªç‚¹æ˜¯å¦åœ¨é˜Ÿåˆ—ä¸­ 
+cnt[N+2];	 //æŸä¸ªç‚¹è·ç¦»è¢«æ›´æ–°çš„æ¬¡æ•°ï¼Œå¦‚æžœåˆ°è¾¾nå°±è¯´æ˜Žæœ‰è´ŸçŽ¯ 
 int pre[N+2];
 
 
-bool spfa(int s){ //Ëã³ö´Ósµ½ËùÓÐ¶¥µãµÄ×î¶ÌÂ·£¬ÓÐ¸º»··µ»Øfalse 
+bool spfa(int s){ //ç®—å‡ºä»Žsåˆ°æ‰€æœ‰é¡¶ç‚¹çš„æœ€çŸ­è·¯ï¼Œæœ‰è´ŸçŽ¯è¿”å›žfalse 
 	for(int i=1;i<=1000;i++) d[i]=Inf;
 	d[s]=0;
 	inq[s]=1;
@@ -59,7 +59,7 @@ bool spfa(int s){ //Ëã³ö´Ósµ½ËùÓÐ¶¥µãµÄ×î¶ÌÂ·£¬ÓÐ¸º»··µ»Øfalse
 
 int main()
 {
-	cin>>n; //nÊÇ±ßÊý²»ÊÇµãÊý 
+	cin>>n; //næ˜¯è¾¹æ•°ä¸æ˜¯ç‚¹æ•° 
 	for(int i=0;i<n;i++){
 		int a,b,d;
 		cin>>a>>b>>d;
@@ -69,7 +69,7 @@ int main()
 	cin>>s>>e;  
 	bool ok=spfa(s);
 	if(ok==false){
-		cout<<" ÓÐ¸º»·£¡";
+		cout<<" æœ‰è´ŸçŽ¯ï¼";
 		return 0;
 	}
 	if(d[e]==Inf) cout<<"Inf"<<endl;

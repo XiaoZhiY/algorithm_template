@@ -17,24 +17,24 @@ int gcd(int a,int b){
 	return gcd(b,a%b);
 }
 
-int exgcd(int a,int b,int& x,int& y){//a*x+b*y=gcd(a,b)µÄÒ»×é½â 
+int exgcd(int a,int b,int& x,int& y){//a*x+b*y=gcd(a,b)çš„ä¸€ç»„è§£ 
 	if(b==0){
 		x=1;
 		y=0;
 		return a;
 	}
 	int g=exgcd(b,a%b,y,x);
-	y=y-(a/b)*x;	//ĞÂÔöµÄ 
+	y=y-(a/b)*x;	//æ–°å¢çš„ 
 	return g;
 } 
 
 /*
-Í¨¹ıexgcd¿ÉÒÔÇó³öax+by=gcd(a,b)µÄÒ»×é½â(x0,y0)
-Í¨½âÎª(x0+kb',y0-ka') b'=b/gcd  a'=a/gcd 
-ÄÇÃ´¶ÔÓÚax+by=cÀ´ËµÈç¹ûcÊÇgcd(a,b)µÄÕûÊı±¶,¼ÙÉèÎª n ±¶
-ÄÇÃ´ax+by=cµÄÒ»×é½âÎª(nx0,ny0),Èç¹û²»ÊÇÕûÊı±¶ÔòÎŞ½â
-Í¨½âÎª(nx0+kb',ny0-ka') 
-×îĞ¡µÄÕıÊı½â X=(nx0%b'+b')%b' 
+é€šè¿‡exgcdå¯ä»¥æ±‚å‡ºax+by=gcd(a,b)çš„ä¸€ç»„è§£(x0,y0)
+é€šè§£ä¸º(x0+kb',y0-ka') b'=b/gcd  a'=a/gcd 
+é‚£ä¹ˆå¯¹äºax+by=cæ¥è¯´å¦‚æœcæ˜¯gcd(a,b)çš„æ•´æ•°å€,å‡è®¾ä¸º n å€
+é‚£ä¹ˆax+by=cçš„ä¸€ç»„è§£ä¸º(nx0,ny0),å¦‚æœä¸æ˜¯æ•´æ•°å€åˆ™æ— è§£
+é€šè§£ä¸º(nx0+kb',ny0-ka') 
+æœ€å°çš„æ­£æ•°è§£ X=(nx0%b'+b')%b' 
 */
 int main()
 {
